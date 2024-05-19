@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="toto_view_tree" model="ir.ui.view">
+            <field name="name">toto_view_tree</field>
+            <field name="model">owl.todo.list</field>
+            <field name="arch" type="xml">
+                <tree string="toto_tree">
+                    <field name="name"/>
+                    <field name="color" widget="color"/>
+                    <field name="done"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="todo_view_form" model="ir.ui.view">
+            <field name="name">todo_view_form</field>
+            <field name="model">owl.todo.list</field>
+            <field name="arch" type="xml">
+                <form string="todo_form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="color" widget="color"/>
+                            <field name="done"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="owl_todo_list.action_window">
+            <field name="name">owl_todo_list window</field>
+            <field name="res_model">owl.todo.list</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+
+    <menuitem name="OWL" id="owl_todo_list.menu_root">
+        <menuitem name="Todo list" id="owl_todo_list.menu_1_list"  action="owl_todo_list.action_window"/>
+        <menuitem name="Todo list js" id="owl_todo_list.menu_E_list"  action="owl_todo_list.action_todo_list_js"/>
+    </menuitem>
+
+
+</odoo>

@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <record id="action_todo_list_js" model="ir.actions.client">
+            <field name="name">Todo</field>
+            <field name="tag">owl_todo_list.action_todo_list_js</field> <!--the added action in registry-->
+        </record>
+    </data>
+</odoo>
